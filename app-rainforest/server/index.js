@@ -13,6 +13,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors);
 app.use(morgan);
 
+app.use(express.static(__dirname + '/../react-client/dist'));
+
 
 const port = 710;
 
