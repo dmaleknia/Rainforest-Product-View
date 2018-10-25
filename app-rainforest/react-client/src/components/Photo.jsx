@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Display extends Component {
+class Photo extends Component {
   constructor(props) {
     super(props);
     this.state = {  }
   }
   render() {
-    return (  );
+    return ( <span>Here is a display</span> );
   }
 }
 
-export default Display;
+export default Photo;
