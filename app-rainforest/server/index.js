@@ -6,12 +6,12 @@ const axios = require('axios');
 const _ = require('lodash');
 
 const app = express();
-const port = 3000;
+const port = 710;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
