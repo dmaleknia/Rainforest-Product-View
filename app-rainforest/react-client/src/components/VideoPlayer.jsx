@@ -6,7 +6,7 @@ class VideoPlayer extends Component {
     this.state = {  }
   }
   render() {
-    return (  );
+    return ( <span>Here is the video player</span> );
   }
 }
 

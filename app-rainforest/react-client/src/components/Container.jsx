@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Photo from './Photo.jsx';
+import VideoPlayer from './VideoPlayer.jsx';
 
 class Container extends Component {
   constructor(props) {
@@ -6,7 +8,16 @@ class Container extends Component {
     this.state = {  }
   }
   render() {
-    return (  );
+    return (
+      <span>Here is the container
+      <Photo />
+      <Photo />
+      <Photo />
+      <Photo />
+      <Photo />
+      <VideoPlayer />
+      </span>
+    );
   }
 }
 
