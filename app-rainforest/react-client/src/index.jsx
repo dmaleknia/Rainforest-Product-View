@@ -15,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <span>Hello from app!</span>
+        <h1 id='heading'>Rainforest.com</h1>
       </div>
     );
   }
