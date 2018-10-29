@@ -10,7 +10,7 @@ class ZoomView extends Component {
   render() {
     return (
       <span>
-        <iframe src={this.props.currentImage}
+        <iframe src={this.props.display}></iframe>
       </span>
     );
   }
