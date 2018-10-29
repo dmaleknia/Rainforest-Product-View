@@ -6,7 +6,11 @@ class Photo extends Component {
     this.state = {  }
   }
   render() {
-    return ( <span>Here is a photo</span> );
+    return (
+      <span>Here is a photo
+
+      </span>
+    );
   }
 }
 
