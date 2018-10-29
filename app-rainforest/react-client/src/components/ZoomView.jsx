@@ -4,9 +4,9 @@ class ZoomView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
     }
   }
+
   render() {
     if (this.props.displayed) {
       return (

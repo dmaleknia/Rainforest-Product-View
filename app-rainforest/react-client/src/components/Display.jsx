@@ -9,6 +9,7 @@ class Display extends Component {
       photos: []
     }
   }
+
   render() {
     if (this.props.displayed) {
       return (

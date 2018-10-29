@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 class VideoPlayer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = { }
   }
+
   render() {
     if (this.props.displayed) {
       return (

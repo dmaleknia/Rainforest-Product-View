@@ -9,6 +9,7 @@ class Container extends Component {
       photos: []
     }
   }
+
   render() {
     return (
       <span className='Container'>
