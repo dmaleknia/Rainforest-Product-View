@@ -10,6 +10,7 @@ class VideoPlayer extends Component {
     if (this.props.displayed) {
       return (
         <span className = 'VideoPlayer'>
+          VideoPlayer
           <iframe width='420' height='315' src={this.props.video}></iframe>
         </span>
       );

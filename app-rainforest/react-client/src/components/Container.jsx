@@ -13,7 +13,6 @@ class Container extends Component {
   render() {
     return (
       <span className='Container'>
-      Container
       <Photo image={this.state.photos[0]} />
       <Photo image={this.state.photos[1]} />
       <Photo image={this.state.photos[2]} />

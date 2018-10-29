@@ -14,6 +14,7 @@ class Display extends Component {
     if (this.props.displayed) {
       return (
         <span className='Display'>
+          Display
           <iframe width='420' height='315' src={this.props.image}></iframe>
         </span>
       );
