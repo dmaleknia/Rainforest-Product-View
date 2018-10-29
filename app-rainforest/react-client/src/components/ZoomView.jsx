@@ -10,13 +10,13 @@ class ZoomView extends Component {
   render() {
     if (this.props.displayed) {
       return (
-        <span className='ZoomView'>Zoom View
+        <span className='ZoomView'>
           <iframe width='420' height='315' src={this.props.image}></iframe>
         </span>
       );
     } else {
       return (
-        <span></span>
+        <span>Hiding zoom view</span>
       );
     }
   }

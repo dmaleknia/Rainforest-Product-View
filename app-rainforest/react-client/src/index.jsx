@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+
 import Container from './components/Container.jsx';
+import Display from './components/Display.jsx';
+import VideoPlayer from './components/VideoPlayer.jsx';
+import ZoomView from './components/ZoomView.jsx';
+
+import axios from 'axios';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProduct: '',
-      showVideoPlayer: true,
+      currentProduct: null,
+      showVideoPlayer: false,
       showZoomView: true
     }
 
@@ -18,9 +24,14 @@ class App extends Component {
     return (
       <div>
         <h1 id='heading'>Rainforest.com</h1>
-        <Container />
-        <ZoomView displayed={this.state.showZoomView}/>
-        <VideoPlayer displayed={this.state.showVideoPlayer}/>
+        <div id='left'>
+          <Container />
+          <Display displayed={!this.state.showVideoPlayer} />
+          <VideoPlayer displayed={this.state.showVideoPlayer} />
+        </div>
+        <div id='right'>
+          <ZoomView displayed={this.state.showZoomView} /><br />
+        </div>
       </div>
     );
   }

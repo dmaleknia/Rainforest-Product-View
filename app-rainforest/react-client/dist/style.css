@@ -1,4 +1,14 @@
-.container {
+.Container {
   display: flex;
   flex-direction: column;
+}
+
+#left {
+  width: 50%;
+  border: 1px;
+}
+
+#right {
+  width: 50%;
+  border: 1px;
 }
