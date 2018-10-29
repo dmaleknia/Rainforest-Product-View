@@ -3,14 +3,24 @@ import React, { Component } from 'react';
 class VideoPlayer extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = {
+      displayed: true
+    }
   }
   render() {
-    return (
-      <span>
-        Here is the video player
-      </span>
-    );
+    if (this.state.displayed) {
+      return (
+        <span className = 'VideoPlayer'>
+          <iframe width='420' height='315'
+            src={this.state.video}>
+          </iframe>
+        </span>
+      );
+    } else {
+      return (
+        <span></span>
+      );
+    }
   }
 }
 

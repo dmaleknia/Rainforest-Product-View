@@ -7,7 +7,7 @@ class Photo extends Component {
   }
   render() {
     return (
-      <span>Here is a photo
+      <span className='Photo'>
 
       </span>
     );

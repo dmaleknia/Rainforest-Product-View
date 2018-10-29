@@ -9,7 +9,7 @@ class Container extends Component {
   }
   render() {
     return (
-      <span className='container'>Here is the container
+      <span className='Container'>Here is the container
       <Photo />
       <Photo />
       <Photo />
