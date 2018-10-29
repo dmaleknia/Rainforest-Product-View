@@ -7,7 +7,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProduct: ''
+      currentProduct: '',
+      showVideoPlayer: true,
+      showZoomView: true
     }
 
   }
@@ -18,6 +20,8 @@ class App extends Component {
       <div>
         <h1 id='heading'>Rainforest.com</h1>
         <Container />
+        <ZoomView displayed={this.state.showZoomView}/>
+        <VideoPlayer displayed={this.state.showVideoPlayer}/>
       </div>
     );
   }
