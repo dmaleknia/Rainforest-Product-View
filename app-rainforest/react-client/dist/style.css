@@ -3,12 +3,12 @@
   flex-direction: column;
 }
 
-#left {
+.left {
   width: 50%;
   border: 1px;
 }
 
-#right {
+.right {
   width: 50%;
   border: 1px;
 }

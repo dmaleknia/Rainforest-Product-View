@@ -23,13 +23,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 id='heading'>Rainforest.com</h1>
-        <div id='left'>
+        <h1 className='heading'>Rainforest.com</h1>
+        <div className='left'>
           <Container />
           <Display displayed={!this.state.showVideoPlayer} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
-        <div id='right'>
+        <div className='right'>
           <ZoomView displayed={this.state.showZoomView} /><br />
         </div>
       </div>
