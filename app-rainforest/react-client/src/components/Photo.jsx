@@ -9,6 +9,7 @@ class Photo extends Component {
 
   mouseOver(event) {
     this.props.setDisplay(this.props.image);
+    this.props.view();
   }
 
   render() {
