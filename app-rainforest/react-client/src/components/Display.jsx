@@ -13,7 +13,7 @@ class Display extends Component {
       return (
         <span className='Display'>
           Display
-          <iframe width='420' height='315' src={this.props.image}></iframe>
+          <img width='420' height='315' src={this.props.image}></img>
         </span>
       );
     } else {
