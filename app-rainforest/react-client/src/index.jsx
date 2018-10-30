@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='ProductView'>
         <h1 className='heading'>Rainforest.com</h1>
         <div className='left'>
           <Container />
