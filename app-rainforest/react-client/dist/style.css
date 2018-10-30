@@ -17,3 +17,10 @@
   display: flex;
   width: 40%;
 }
+
+.Photo {
+  margin-top: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: grey;
+}

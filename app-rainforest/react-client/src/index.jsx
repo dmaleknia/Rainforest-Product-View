@@ -12,7 +12,8 @@ class App extends Component {
     this.state = {
       currentProduct: null,
       showVideoPlayer: true,
-      showZoomView: true
+      showZoomView: true,
+      currentDisplay: null,
     }
   }
 
@@ -22,7 +23,7 @@ class App extends Component {
         <h1 className='heading'>Rainforest.com</h1>
         <div className='left'>
           <Container />
-          <Display displayed={this.state.showVideoPlayer} />
+          <Display displayed={this.state.showVideoPlayer} image={this.state.currentDisplay} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
         <div className='right'>

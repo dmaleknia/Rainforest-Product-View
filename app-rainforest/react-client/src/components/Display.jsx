@@ -5,9 +5,7 @@ import VideoPlayer from './VideoPlayer.jsx';
 class Display extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      photos: []
-    }
+    this.state = { }
   }
 
   render() {

@@ -12,8 +12,8 @@ class Photo extends Component {
 
   render() {
     return (
-      <span className='Photo'>
-        <img onMouseOver={() => this.mouseOver()} src={this.props.image} width="100" height="100"></img>
+      <span>
+        <img className='Photo' onMouseOver={() => this.mouseOver()} src={this.props.image} width="45" height="45"></img>
       </span>
     );
   }
