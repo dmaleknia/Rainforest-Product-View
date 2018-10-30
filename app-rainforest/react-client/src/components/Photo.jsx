@@ -9,8 +9,7 @@ class Photo extends Component {
   render() {
     return (
       <span className='Photo'>
-        Photo
-        <img src={this.props.image}></img>
+        <img src={this.props.image} width="100" height="100"></img>
       </span>
     );
   }

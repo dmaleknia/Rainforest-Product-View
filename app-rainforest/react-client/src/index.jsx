@@ -6,18 +6,14 @@ import Display from './components/Display.jsx';
 import VideoPlayer from './components/VideoPlayer.jsx';
 import ZoomView from './components/ZoomView.jsx';
 
-import axios from 'axios';
-
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentProduct: null,
-      showVideoPlayer: false,
+      showVideoPlayer: true,
       showZoomView: true
     }
-
   }
 
   render() {
@@ -26,7 +22,7 @@ class App extends Component {
         <h1 className='heading'>Rainforest.com</h1>
         <div className='left'>
           <Container />
-          <Display displayed={!this.state.showVideoPlayer} />
+          <Display displayed={this.state.showVideoPlayer} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
         <div className='right'>

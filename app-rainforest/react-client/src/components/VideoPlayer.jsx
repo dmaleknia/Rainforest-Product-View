@@ -11,7 +11,7 @@ class VideoPlayer extends Component {
       return (
         <span className = 'VideoPlayer'>
           VideoPlayer
-          <iframe width='420' height='315' src={this.props.video}></iframe>
+          <iframe width='420' height='315' src="https://www.youtube.com/embed/BoDQEuP8Igo"></iframe>
         </span>
       );
     } else {

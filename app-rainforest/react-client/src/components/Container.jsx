@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Photo from './Photo.jsx';
-import VideoPlayer from './VideoPlayer.jsx';
+import samplePhotos from './samplePhotos.js';
 
 class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: []
+      photos: samplePhotos.samplePhotos
     }
   }
 
