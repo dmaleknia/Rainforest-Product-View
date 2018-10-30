@@ -6,6 +6,8 @@
 .left {
   width: 50%;
   border: 1px;
+  display: flex;
+  flex-direction: row;
 }
 
 .right {
@@ -24,3 +26,11 @@
   border-width: 1px;
   border-color: grey;
 }
+
+.VideoPlayer {
+  margin-left: 100px;
+}
+
+/* .Photo {
+  margin-left: 100px;
+} */

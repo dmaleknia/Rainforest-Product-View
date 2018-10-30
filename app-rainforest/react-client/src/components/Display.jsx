@@ -12,7 +12,6 @@ class Display extends Component {
     if (this.props.displayed) {
       return (
         <span className='Display'>
-          Display
           <img width='420' height='315' src={this.props.image}></img>
         </span>
       );

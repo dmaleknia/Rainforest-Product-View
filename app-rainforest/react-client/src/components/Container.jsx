@@ -13,7 +13,6 @@ class Container extends Component {
   render() {
     return (
       <span className='Container'>
-      {console.log(this.props)}
         <Photo view={this.props.showDisplay} setDisplay={this.props.setDisplay} image={this.state.photos[0]} />
         <Photo view={this.props.showDisplay} setDisplay={this.props.setDisplay} image={this.state.photos[1]} />
         <Photo view={this.props.showDisplay} setDisplay={this.props.setDisplay} image={this.state.photos[2]} />
