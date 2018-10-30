@@ -13,12 +13,12 @@ class Container extends Component {
   render() {
     return (
       <span className='Container'>
-      <Photo image={this.state.photos[0]} />
-      <Photo image={this.state.photos[1]} />
-      <Photo image={this.state.photos[2]} />
-      <Photo image={this.state.photos[3]} />
-      <Photo image={this.state.photos[4]} />
-      <Photo image={this.state.photos[5]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[0]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[1]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[2]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[3]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[4]} />
+        <Photo setDisplay={this.props.setDisplay} image={this.state.photos[5]} />
       <img src={this.props.photo}></img>
       </span>
     );

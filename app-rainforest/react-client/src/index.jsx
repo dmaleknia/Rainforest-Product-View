@@ -15,14 +15,18 @@ class App extends Component {
       showZoomView: true,
       currentDisplay: null,
     }
+    this.setCurrentDisplay = this.setCurrentDisplay.bind(this);
+  }
+
+  setCurrentDisplay(url) {
+    this.setState({ currentDisplay: url });
   }
 
   render() {
     return (
       <div className='ProductView'>
-        <h1 className='heading'>Rainforest.com</h1>
         <div className='left'>
-          <Container />
+          <Container setDisplay={this.setCurrentDisplay} />
           <Display displayed={this.state.showVideoPlayer} image={this.state.currentDisplay} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
