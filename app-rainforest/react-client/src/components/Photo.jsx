@@ -6,10 +6,14 @@ class Photo extends Component {
     this.state = {  }
   }
 
+  mouseOver(event) {
+    console.log(this.props.image);
+  }
+
   render() {
     return (
       <span className='Photo'>
-        <img src={this.props.image} width="100" height="100"></img>
+        <img onMouseOver={() => this.mouseOver()} src={this.props.image} width="100" height="100"></img>
       </span>
     );
   }
