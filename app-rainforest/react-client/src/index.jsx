@@ -11,9 +11,9 @@ class App extends Component {
     super(props);
     this.state = {
       currentProduct: null,
-      showVideoPlayer: true,
-      showZoomView: true,
-      currentDisplay: null,
+      showVideoPlayer: false,
+      showZoomView: false,
+      currentDisplay: null
     }
     this.setCurrentDisplay = this.setCurrentDisplay.bind(this);
   }
@@ -22,12 +22,20 @@ class App extends Component {
     this.setState({ currentDisplay: url });
   }
 
+  showVideo() {
+    this.setState({ showVideoPlayer: true });
+  }
+
+  showDisplay() {
+    this.setState({ showVideoPlayer: false });
+  }
+
   render() {
     return (
       <div className='ProductView'>
         <div className='left'>
           <Container setDisplay={this.setCurrentDisplay} />
-          <Display displayed={this.state.showVideoPlayer} image={this.state.currentDisplay} />
+          <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
         <div className='right'>
