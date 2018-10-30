@@ -17,7 +17,7 @@ class ZoomView extends Component {
       );
     } else {
       return (
-        <span>Hiding zoom view</span>
+        <span></span>
       );
     }
   }

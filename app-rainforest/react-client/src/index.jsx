@@ -16,6 +16,8 @@ class App extends Component {
       currentDisplay: null
     }
     this.setCurrentDisplay = this.setCurrentDisplay.bind(this);
+    this.showVideo = this.showVideo.bind(this);
+    this.showDisplay = this.showDisplay.bind(this);
   }
 
   setCurrentDisplay(url) {
@@ -34,7 +36,7 @@ class App extends Component {
     return (
       <div className='ProductView'>
         <div className='left'>
-          <Container setDisplay={this.setCurrentDisplay} />
+          <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} />
           <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
