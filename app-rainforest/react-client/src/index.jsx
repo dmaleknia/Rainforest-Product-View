@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       currentProduct: null,
       showVideoPlayer: false,
-      showZoomView: false,
+      showZoomView: true,
       currentDisplay: null
     }
     this.setCurrentDisplay = this.setCurrentDisplay.bind(this);

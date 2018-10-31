@@ -5,19 +5,18 @@
 
 .left {
   width: 50%;
-  border: 1px;
   display: flex;
   flex-direction: row;
 }
 
 .right {
   width: 50%;
-  border: 1px;
+  float:right;
 }
 
 .ProductView {
   display: flex;
-  width: 40%;
+  flex-direction: row;
 }
 
 .Photo {
@@ -33,4 +32,8 @@
 
 .Display {
   margin-left: 70px;
+}
+
+.ZoomView {
+  float: right;
 }
