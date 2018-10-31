@@ -12,12 +12,14 @@ class App extends Component {
     this.state = {
       currentProduct: null,
       showVideoPlayer: false,
-      showZoomView: true,
+      showZoomView: false,
       currentDisplay: null
     }
     this.setCurrentDisplay = this.setCurrentDisplay.bind(this);
     this.showVideo = this.showVideo.bind(this);
     this.showDisplay = this.showDisplay.bind(this);
+    this.showZoomView = this.showZoomView.bind(this);
+    this.hideZoomView = this.hideZoomView.bind(this);
   }
 
   setCurrentDisplay(url) {
@@ -32,12 +34,20 @@ class App extends Component {
     this.setState({ showVideoPlayer: false });
   }
 
+  showZoomView() {
+    this.setState({ showZoomView: true });
+  }
+
+  hideZoomView() {
+    this.setState({ showZoomView: false });
+  }
+
   render() {
     return (
       <div className='ProductView'>
         <div className='left'>
           <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} />
-          <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} />
+          <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} showZoomView={this.showZoomView} hideZoomView={this.hideZoomView} />
           <VideoPlayer displayed={this.state.showVideoPlayer} />
         </div>
         <div className='right'>
