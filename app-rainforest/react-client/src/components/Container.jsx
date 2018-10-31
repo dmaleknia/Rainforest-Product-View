@@ -10,6 +10,10 @@ class Container extends Component {
     }
   }
 
+  componentDidMount() {
+    this.props.setDisplay(this.state.photos[0]);
+  }
+
   render() {
     return (
       <span className='Container'>
