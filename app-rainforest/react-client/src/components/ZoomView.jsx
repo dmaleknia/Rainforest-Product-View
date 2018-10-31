@@ -11,7 +11,7 @@ class ZoomView extends Component {
     if (this.props.displayed) {
       return (
         <span>
-          <img className='ZoomView' width='500' height='400' src={this.props.image}></img>
+          <img className='ZoomView' width='500' height='500' src={this.props.image}></img>
         </span>
       );
     } else {
