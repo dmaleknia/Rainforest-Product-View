@@ -5,6 +5,7 @@ import Container from './components/Container.jsx';
 import Display from './components/Display.jsx';
 import VideoPlayer from './components/VideoPlayer.jsx';
 import ZoomView from './components/ZoomView.jsx';
+import Category from './components/Category.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -44,16 +45,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className='ProductView'>
-        <div className='left'>
-          <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} />
-          <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} showZoomView={this.showZoomView} hideZoomView={this.hideZoomView} />
-          <VideoPlayer displayed={this.state.showVideoPlayer} />
+      <span>
+        <Category text="Cell Phones & Accessories › Cell Phones › Unlocked Cell Phones" />
+        <div className='ProductView'>
+          <div className='left'>
+            <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} />
+            <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} showZoomView={this.showZoomView} hideZoomView={this.hideZoomView} />
+            <VideoPlayer displayed={this.state.showVideoPlayer} />
+          </div>
+          <div className='right'>
+            <ZoomView displayed={this.state.showZoomView} /><br />
+          </div>
         </div>
-        <div className='right'>
-          <ZoomView displayed={this.state.showZoomView} /><br />
-        </div>
-      </div>
+      </span>
     );
   }
 }
