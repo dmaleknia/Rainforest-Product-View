@@ -22,7 +22,7 @@ class Display extends Component {
     if (this.props.displayed) {
       return (
         <span className='Display' onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-          <img width='420' height='420' src={this.props.image}></img>
+          <img id='display' width='420' height='420' src={this.props.image}></img>
         </span>
       );
     } else {
