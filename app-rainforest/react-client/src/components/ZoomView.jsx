@@ -37,7 +37,7 @@ class ZoomView extends Component {
     lens.addEventListener("touchmove", moveLens);
     img.addEventListener("touchmove", moveLens);
     function moveLens(e) {
-      var pos, x, y;
+      let pos, x, y;
       /*prevent any other actions that may occur when moving over the image*/
       e.preventDefault();
       /*get the cursor's x and y positions:*/
