@@ -9,10 +9,11 @@ class ZoomView extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
-    setTimeout(() => {
-      this.calculateZoom();
-    }, 1000);
+    if (this.props.displayed) {
+      setTimeout(() => {
+        this.calculateZoom();
+      }, 200);
+    }
   }
 
   calculateZoom() {
@@ -75,7 +76,7 @@ class ZoomView extends Component {
     if (this.props.displayed) {
       return (
         <span>
-          <div id="result" className="img-zoom-result" width='500' height='500'></div>
+          <div id="result"></div>
         </span>
       );
     } else {
