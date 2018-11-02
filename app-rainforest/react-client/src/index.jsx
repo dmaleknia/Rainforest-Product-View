@@ -43,6 +43,14 @@ class App extends Component {
     this.setState({ showZoomView: false });
   }
 
+  renderZoomView() {
+    if (this.state.showZoomView) {
+      return <div><ZoomView displayed={this.state.showZoomView} /><br /></div>;
+    } else {
+      return <div></div>
+    }
+  }
+
   render() {
     return (
       <span>
@@ -54,7 +62,7 @@ class App extends Component {
             <VideoPlayer displayed={this.state.showVideoPlayer} />
           </div>
           <div className='right'>
-            <ZoomView displayed={this.state.showZoomView} /><br />
+            {this.renderZoomView()}
           </div>
         </div>
       </span>
