@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const images = require('./images.js');
-const videos = require('./videos.js');
+const images = require('./images.js').images;
+const videos = require('./videos.js').videos;
 
 const sequelize = new Sequelize('product_view', 'root', '', {
   host: 'localhost',
@@ -45,10 +45,25 @@ const seed = () => {
 };
 
 sequelize.query("CREATE DATABASE product_view;")
-.then(() => {
-  sequelize = new Sequelize('product_view', 'root', '', {
-    host: 'localhost',
-    dialect: 'mysql'
+  .then(() => {
+    sequelize.close();
+    sequelize = new Sequelize('product_view', 'root', '', {
+      host: 'localhost',
+      dialect: 'mysql'
+    });
+    seed();
+  })
+  .catch(err => {
+    console.log(err);
+
+    // sequelize.query("CREATE DATABASE product_view;")
+    //   .then(() => {
+    //     sequelize.close();
+    //     sequelize = new Sequelize('product_view', 'root', '', {
+    //       host: 'localhost',
+    //       dialect: 'mysql'
+    //     });
+    //     seed();
+    //   })
+
   });
-  seed();
-});
