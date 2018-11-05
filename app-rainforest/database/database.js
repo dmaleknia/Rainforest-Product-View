@@ -31,6 +31,9 @@ const seed = () => {
         let video_url = getVideo();
         let category = `category ${i}`;
 
+        console.log(image_6_url);
+        console.log(video_url);
+
         sequelize.query(
           `INSERT INTO products (id, name, image_1_url, image_2_url, image_3_url, image_4_url, image_5_url, image_6_url, video_url, category) VALUES ('${i}', '${name}', '${image_1_url}', '${image_2_url}', '${image_3_url}', '${image_4_url}', '${image_5_url}', '${image_6_url}', '${video_url}', '${category}')`, {
             type: sequelize.QueryTypes.INSERT
@@ -41,7 +44,7 @@ const seed = () => {
     });
 };
 
-sequelize.query("CREATE DATABASE products;")
+sequelize.query("CREATE DATABASE product_view;")
 .then(() => {
   sequelize = new Sequelize('product_view', 'root', '', {
     host: 'localhost',
