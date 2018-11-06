@@ -16,16 +16,16 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-// const sequelize = new Sequelize('product_view', 'root', '', {
-//   host: 'localhost',
-//   dialect: 'mysql'
-// });
+const sequelize = new Sequelize('product_view', 'root', '', {
+  host: 'localhost',
+  dialect: 'mysql'
+});
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/products', (req, res) => {
-  console.log(req);
-  let productID;
+app.get('/products/', (req, res) => {
+
+  let productID = req.query.id; // http://localhost:710/products?id=91 gets product id 91
   sequelize.authenticate()
     .then(() => {
       console.log('Authenticated');
@@ -41,7 +41,7 @@ app.get('/products', (req, res) => {
       res.status(200).send(JSON.stringify(data));
     })
     .catch(err => {
-      console.error(err);
+      console.error(err.original);
     });
 });
 
