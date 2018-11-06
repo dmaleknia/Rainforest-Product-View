@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProductID: 91,
+      currentProductID: 10,
       showVideoPlayer: false,
       showZoomView: false,
       currentDisplay: null,
@@ -43,6 +43,7 @@ class App extends Component {
         images.push(data.image_6_url);
 
         this.setState({
+          currentDisplay: data.image_1_url,
           videoURL: data.video_url,
           category: data.category,
           images: images

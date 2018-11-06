@@ -6,14 +6,7 @@ class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: samplePhotos.samplePhotos
     }
-  }
-
-  componentDidMount() {
-    this.props.setDisplay(this.state.photos[0]);
-    console.log('props below: ');
-    console.log(this.props);
   }
 
   renderContainer() {
