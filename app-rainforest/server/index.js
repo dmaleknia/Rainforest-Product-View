@@ -15,31 +15,26 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
-app.use('/products', express.static(__dirname + '/../react-client/dist'));
 
 const sequelize = new Sequelize('product_view', 'root', '', {
   host: 'localhost',
   dialect: 'mysql'
 });
 
-app.get('products/:id', (req, res) => {
-
-  let productID = req.params.id; // http://localhost:710/products?id=91 gets product id 91
-  sequelize.authenticate()
-    .then(() => {
-      console.log('Authenticated');
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).send();
-    });
+// axios.get(`http://localhost:710/products?id=${currentProductID}`)
+app.get('/products', (req, res) => {
+  console.log('hello from endpoint');
+  console.log(`${req.query.id} <= here is the ID`);
+  let productID = req.query.id; // http://localhost:710/products?id=91 gets product id 91
   sequelize.query(`SELECT * FROM products WHERE id=${productID};`, {
       type: sequelize.QueryTypes.SELECT
     })
     .then(data => {
+      console.log(`here is the data: ${JSON.stringify(data)}`);
       res.status(200).json(data);
     })
     .catch(err => {
+      console.log(err);
       res.status(500).json(error);
     });
 });

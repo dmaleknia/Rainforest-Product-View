@@ -7,11 +7,13 @@ import VideoPlayer from './components/VideoPlayer.jsx';
 import ZoomView from './components/ZoomView.jsx';
 import Category from './components/Category.jsx';
 
+import axios from 'axios';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProduct: null,
+      currentProductID: 91,
       showVideoPlayer: false,
       showZoomView: false,
       currentDisplay: null
@@ -21,6 +23,19 @@ class App extends Component {
     this.showDisplay = this.showDisplay.bind(this);
     this.showZoomView = this.showZoomView.bind(this);
     this.hideZoomView = this.hideZoomView.bind(this);
+  }
+
+  componentDidMount() {
+    // let currentProductID = document.URL.split('=')[1];
+    let currentProductID = this.state.currentProductID;
+    axios.get(`/products?id=${currentProductID}`)
+      .then(function (response) {
+        console.log(response.data[0]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   }
 
   setCurrentDisplay(url) {
@@ -52,7 +67,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('I was triggered during render');
     return (
       <span>
         <Category text="Cell Phones & Accessories › Cell Phones › Unlocked Cell Phones" />
