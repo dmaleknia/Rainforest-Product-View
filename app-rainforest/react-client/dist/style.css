@@ -132,6 +132,7 @@ table {
 .Container {
   display: flex;
   flex-direction: column;
+  float: left;
 }
 
 .left {
