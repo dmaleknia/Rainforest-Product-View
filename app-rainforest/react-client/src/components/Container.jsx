@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Photo from './Photo.jsx';
-import samplePhotos from './samplePhotos.js';
 
 class Container extends Component {
   constructor(props) {
