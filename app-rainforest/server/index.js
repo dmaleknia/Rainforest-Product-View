@@ -22,9 +22,7 @@ const sequelize = new Sequelize('product_view', 'root', '', {
   dialect: 'mysql'
 });
 
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.get('products/id', (req, res) => {
+app.get('products/:id', (req, res) => {
 
   let productID = req.params.id; // http://localhost:710/products?id=91 gets product id 91
   sequelize.authenticate()
