@@ -22,6 +22,7 @@ class Display extends Component {
     if (this.props.displayed) {
       return (
         <span className='Display' onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+          <p id='category'>{this.props.category}</p>
           <img id='display' width='420' height='420' src={this.props.image}></img>
           <p id='message'>Roll over image to zoom in</p>
         </span>

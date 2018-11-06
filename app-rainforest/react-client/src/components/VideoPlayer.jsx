@@ -10,7 +10,7 @@ class VideoPlayer extends Component {
     if (this.props.displayed) {
       return (
         <span className = 'VideoPlayer'>
-          <iframe width='420' height='315' src="https://www.youtube.com/embed/BoDQEuP8Igo"></iframe>
+          <iframe width='420' height='315' src={this.props.videoURL}></iframe>
         </span>
       );
     } else {
