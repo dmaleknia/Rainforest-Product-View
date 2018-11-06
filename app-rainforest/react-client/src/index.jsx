@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('I was triggered during render');
     return (
       <span>
         <Category text="Cell Phones & Accessories › Cell Phones › Unlocked Cell Phones" />
