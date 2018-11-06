@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Photo from './Photo.jsx';
-import VideoPlayer from './VideoPlayer.jsx';
 
 class Display extends Component {
   constructor(props) {

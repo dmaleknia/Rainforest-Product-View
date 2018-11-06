@@ -34,8 +34,6 @@ class App extends Component {
       .then((response) => {
         let data = response.data[0];
         let images = [];
-        // console.log("here is the data: ");
-        // console.log(JSON.stringify(data)); // Why is this not logging?!
 
         images.push(data.image_1_url);
         images.push(data.image_2_url);
@@ -44,15 +42,11 @@ class App extends Component {
         images.push(data.image_5_url);
         images.push(data.image_6_url);
 
-        // console.log(images);
-
         this.setState({
           videoURL: data.video_url,
           category: data.category,
           images: images
         });
-
-        console.log(`Here is the state in parent: ${JSON.stringify(this.state.images)}`); // We are able to log the state down here. Looks right.
       })
       .catch((error) => {
         console.log(error);
