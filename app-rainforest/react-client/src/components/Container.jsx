@@ -12,6 +12,8 @@ class Container extends Component {
 
   componentDidMount() {
     this.props.setDisplay(this.state.photos[0]);
+    console.log('props below: ');
+    console.log(this.props);
   }
 
   render() {

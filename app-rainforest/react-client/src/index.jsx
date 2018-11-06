@@ -19,6 +19,7 @@ class App extends Component {
       currentDisplay: null,
       videoURL: null,
       category: null,
+      images: null
     }
     this.setCurrentDisplay = this.setCurrentDisplay.bind(this);
     this.showVideo = this.showVideo.bind(this);
@@ -32,11 +33,24 @@ class App extends Component {
     axios.get(`/products?id=${currentProductID}`)
       .then((response) => {
         let data = response.data[0];
-        console.log(data);
+        let images = [];
+
+        images.push(data.image_1_url);
+        images.push(data.image_2_url);
+        images.push(data.image_3_url);
+        images.push(data.image_4_url);
+        images.push(data.image_5_url);
+        images.push(data.image_6_url);
+
+        // console.log(images);
+
         this.setState({
           videoURL: data.video_url,
-          category: data.category
+          category: data.category,
+          images: images
         });
+
+        console.log(`Here is the state: ${JSON.stringify(this.state.images)}`);
       })
       .catch((error) => {
         console.log(error);
@@ -78,7 +92,7 @@ class App extends Component {
         <Category text={this.state.category} />
         <div className='ProductView'>
           <div className='left'>
-            <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} />
+            <Container setDisplay={this.setCurrentDisplay} showVideo={this.showVideo} showDisplay={this.showDisplay} images={this.state.images} />
             <Display displayed={!this.state.showVideoPlayer} image={this.state.currentDisplay} showZoomView={this.showZoomView} hideZoomView={this.hideZoomView} />
             <VideoPlayer displayed={this.state.showVideoPlayer} videoURL={this.state.videoURL} />
           </div>
