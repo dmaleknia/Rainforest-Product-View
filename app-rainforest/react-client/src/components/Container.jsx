@@ -27,10 +27,8 @@ class Container extends Component {
   }
 
   render() {
-    console.log("Here are props of child: ", this.props);
     return (
       <span>{this.renderContainer()}</span>
-
     );
   }
 }
