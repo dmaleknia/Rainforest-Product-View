@@ -4,8 +4,7 @@ import Photo from './Photo.jsx';
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = { }
   }
 
   renderContainer() {

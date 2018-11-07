@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 class ZoomView extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    }
+    this.state = {  }
     this.calculateZoom = this.calculateZoom.bind(this);
   }
 
