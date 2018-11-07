@@ -12,7 +12,7 @@ class ZoomView extends Component {
     if (this.props.displayed) {
       setTimeout(() => {
         this.calculateZoom();
-      }, 200);
+      }, 100);
     }
   }
 
