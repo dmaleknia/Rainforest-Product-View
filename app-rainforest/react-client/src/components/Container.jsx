@@ -4,8 +4,11 @@ import Photo from './Photo.jsx';
 class Container extends Component {
   constructor(props) {
     super(props);
-    this.state = { }
+    this.state = {  }
   }
+
+  // use map below to map the photos array to the photo component; (this is better if you have a
+  // changing number of photos for each product instead of a set number)
 
   renderContainer() {
     if (this.props.images !== null) {
