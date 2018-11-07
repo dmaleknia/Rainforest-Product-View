@@ -102,5 +102,5 @@ class App extends Component {
   }
 }
 
-const app = document.getElementById('app');
+const app = document.getElementById('product-view');
 ReactDOM.render(<App />, app);
