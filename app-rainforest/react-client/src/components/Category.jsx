@@ -5,8 +5,19 @@ class Category extends Component {
     super(props);
     this.state = {  }
   }
+
+  display() {
+    if (this.props.text !== null) {
+      return (<span className='Category'>{this.props.text + ' < sub' + this.props.text + ' < sub-sub' + this.props.text}</span>);
+    } else {
+      return (<span></span>);
+    }
+  }
+
   render() {
-    return ( <span className='Category'>{this.props.text + ' < sub' + this.props.text + ' < sub-sub' + this.props.text}</span> );
+    return(
+      <span>{this.display()}</span>
+    );
   }
 }
 
