@@ -143,13 +143,14 @@ table {
 }
 
 .right {
-  width: 50%;
-  float:right;
+  float:left;
+  margin-top: 18px;
 }
 
 .ProductView {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
 }
 
 .Photo {
@@ -169,7 +170,6 @@ table {
 
 .ZoomView {
   float: left;
-  /* margin-right: 50px; */
   display: inline;
 }
 
@@ -218,8 +218,3 @@ table {
   font-family: "Amazon Ember", Arial, sans-serif;
   font-size: 13px;
 }
-
-/* .view {
-  display: flex;
-  flex-direction: row;
-} */

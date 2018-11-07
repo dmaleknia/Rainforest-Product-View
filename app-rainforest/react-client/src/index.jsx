@@ -85,7 +85,7 @@ class App extends Component {
 
   render() {
     return (
-      <span id='view'>
+      <section>
         <Category text={this.state.category} />
         <div className='ProductView'>
           <div className='left'>
@@ -97,7 +97,7 @@ class App extends Component {
             {this.renderZoomView()}
           </div>
         </div>
-      </span>
+      </section>
     );
   }
 }
