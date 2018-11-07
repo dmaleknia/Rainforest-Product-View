@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProductID: 99,
+      currentProductID: 8,
       showVideoPlayer: false,
       showZoomView: false,
       currentDisplay: null,
