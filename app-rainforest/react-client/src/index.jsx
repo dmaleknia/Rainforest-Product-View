@@ -13,7 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentProductID: 10,
+      currentProductID: 24,
       showVideoPlayer: false,
       showZoomView: false,
       currentDisplay: null,
@@ -85,7 +85,7 @@ class App extends Component {
 
   render() {
     return (
-      <span>
+      <span id='view'>
         <Category text={this.state.category} />
         <div className='ProductView'>
           <div className='left'>

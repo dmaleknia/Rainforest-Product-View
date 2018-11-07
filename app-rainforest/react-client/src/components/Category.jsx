@@ -6,7 +6,7 @@ class Category extends Component {
     this.state = {  }
   }
   render() {
-    return ( <span className='Category'>{this.props.text}</span> );
+    return ( <span className='Category'>{this.props.text + ' < sub' + this.props.text + ' < sub-sub' + this.props.text}</span> );
   }
 }
 
