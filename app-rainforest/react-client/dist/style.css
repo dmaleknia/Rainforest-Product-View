@@ -140,7 +140,7 @@ table {
   display: flex;
   flex-direction: row;
   margin-top: 25px;
-  margin-bottom: 120px;
+  margin-bottom: 220px;
 }
 
 .right {
@@ -225,4 +225,8 @@ table {
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+#spacer {
+  margin-bottom: 128px;
 }

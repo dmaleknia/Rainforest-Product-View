@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const Sequelize = require('sequelize');
 
 const app = express();
-const port = 3001;
+const port = 710;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

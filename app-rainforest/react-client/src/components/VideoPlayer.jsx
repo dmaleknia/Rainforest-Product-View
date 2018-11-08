@@ -11,6 +11,7 @@ class VideoPlayer extends Component {
       return (
         <span className = 'VideoPlayer'>
           <iframe width='420' height='315' src={this.props.videoURL}></iframe>
+          <div id='spacer' />
         </span>
       );
     } else {
