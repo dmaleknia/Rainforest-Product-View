@@ -23,7 +23,7 @@ const seed = () => {
   sequelize.query(
     'CREATE TABLE products (id INT PRIMARY KEY, name VARCHAR(255), image_1_url VARCHAR(255), image_2_url VARCHAR(255), image_3_url VARCHAR(255), image_4_url VARCHAR(255), image_5_url VARCHAR(255), image_6_url VARCHAR(255), video_url VARCHAR(255), category VARCHAR(255));')
     .then(() => {
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         let name = `product ${i}`;
         let image_1_url = getImage();
         let image_2_url = getImage();
