@@ -30,7 +30,7 @@ class App extends Component {
 
   componentDidMount() {
     let currentProductID = this.state.currentProductID;
-    axios.get(`/products?id=${currentProductID}`)
+    axios.get(`/productsdisplay?id=${currentProductID}`)
       .then((response) => {
         let data = response.data[0];
         let images = [];

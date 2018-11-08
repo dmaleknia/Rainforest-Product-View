@@ -18,13 +18,18 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 const dbUrl = process.env.DB_URL;
+const db2Url = process.env.RECOMMENDED_PRODUCTS_URL;
 
 const sequelize = new Sequelize(dbUrl, {
   dialect: 'postgres'
 });
 
+const sequelize2 = new Sequelize(db2Url, {
+  dialect: 'postgres'
+});
+
 // axios.get(`http://localhost:710/products?id=${currentProductID}`)
-app.get('/products', (req, res) => {
+app.get('/productsdisplay', (req, res) => {
   let productID = req.query.id; // http://localhost:710/products?id=91 gets product id 91
   sequelize.query(`SELECT * FROM products WHERE id=${productID};`, {
       type: sequelize.QueryTypes.SELECT
