@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -16,9 +18,15 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-const sequelize = new Sequelize('product_view', 'root', '', {
-  host: 'localhost',
-  dialect: 'mysql'
+// const sequelize = new Sequelize('product_view', 'root', '', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+// });
+
+const dbUrl = process.env.DB_URL;
+
+const sequelize = new Sequelize(dbUrl, {
+  dialect: 'postgres'
 });
 
 // axios.get(`http://localhost:710/products?id=${currentProductID}`)
