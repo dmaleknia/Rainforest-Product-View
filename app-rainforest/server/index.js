@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -17,11 +16,6 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/../react-client/dist'));
-
-// const sequelize = new Sequelize('product_view', 'root', '', {
-//   host: 'localhost',
-//   dialect: 'mysql'
-// });
 
 const dbUrl = process.env.DB_URL;
 

@@ -1,13 +1,7 @@
 require('dotenv').config();
-
 const Sequelize = require('sequelize');
 const images = require('./images.js').images;
 const videos = require('./videos.js').videos;
-
-// const sequelize = new Sequelize('product_view', 'root', '', {
-//   host: 'localhost',
-//   dialect: 'mysql'
-// });
 
 const dbUrl = process.env.DB_URL;
 
