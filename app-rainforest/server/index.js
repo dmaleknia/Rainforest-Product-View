@@ -7,7 +7,7 @@ const morgan = require('morgan');
 const Sequelize = require('sequelize');
 
 const app = express();
-const port = 710;
+const port = 3001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,9 +28,9 @@ const sequelize2 = new Sequelize(db2Url, {
   dialect: 'postgres'
 });
 
-// axios.get(`http://localhost:710/products?id=${currentProductID}`)
+// axios.get(`http://localhost:710/productsdisplay?id=${currentProductID}`)
 app.get('/productsdisplay', (req, res) => {
-  let productID = req.query.id; // http://localhost:710/products?id=91 gets product id 91
+  let productID = req.query.id; // http://localhost:710/productsdisplay?id=91 gets product id 91
   sequelize.query(`SELECT * FROM products WHERE id=${productID};`, {
       type: sequelize.QueryTypes.SELECT
     })
@@ -40,6 +40,26 @@ app.get('/productsdisplay', (req, res) => {
     .catch(err => {
       console.log(err);
       res.status(500).json(error);
+    });
+});
+
+app.get('/products', (req, res) => {
+  sequelize2.authenticate()
+    .then(() => {
+      console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+      console.error('Unable to connect to the database: ', err);
+      res.status(500).send();
+    });
+  sequelize2.query('SELECT * FROM products ORDER BY id', {
+      type: sequelize.QueryTypes.SELECT
+    })
+    .then(data => {
+      res.status(200).send(JSON.stringify(data));
+    })
+    .catch(err => {
+      if (err) throw err;
     });
 });
 
