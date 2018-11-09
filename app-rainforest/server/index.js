@@ -83,7 +83,7 @@ app.get('/api/reviews', (req, res) => {
     });
 });
 
-app.get('/api/reviews/:productid', (req, res) => {
+app.get('/cr/reviews/:productid', (req, res) => {
   let productid = req.params.productid;
   database('customer_review').where({
       product_id: productid
