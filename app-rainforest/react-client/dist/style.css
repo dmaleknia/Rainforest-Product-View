@@ -230,3 +230,20 @@ body {
 #spacer {
   margin-bottom: 128px;
 }
+
+#product-view{
+  /* float: left; */
+}
+
+#app {
+  /* float: left; */
+}
+
+#top {
+  /* display: inline-block; */
+  /* display: inline-block;
+  vertical-align: middle; */
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
