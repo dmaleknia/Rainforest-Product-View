@@ -6,12 +6,16 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Sequelize = require('sequelize');
 
+const app = express();
+const port = 710;
+
 const environment = process.env.NODE_ENV || 'development';
 const configuration = require(__dirname + '/../../knexfile.js')[environment];
 const database = require('knex')(configuration);
 
-const app = express();
-const port = 710;
+const models = require('./models/index');
+//application routes
+require('./routes/index')(app);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -95,7 +99,7 @@ app.get('/api/reviews/:productid', (req, res) => {
 });
 
 
-app.get('/api/images', (req, res) => {
+app.get('/cr/images', (req, res) => {
   database('customer_review_images').select()
     .then((images) => {
       res.status(200).json(images);
@@ -107,7 +111,7 @@ app.get('/api/images', (req, res) => {
     });
 });
 
-app.get('/api/images/:reviewId', (req, res) => {
+app.get('/cr/images/:reviewId', (req, res) => {
   let reviewId = req.params.reviewId;
   database('customer_review_images').where({
       review_id: reviewId
@@ -122,7 +126,7 @@ app.get('/api/images/:reviewId', (req, res) => {
     });
 });
 
-app.get('/api/products', (req, res) => {
+app.get('/cr/products', (req, res) => {
   database('product_info').select()
     .then((products) => {
       res.status(200).json(products);
@@ -135,3 +139,5 @@ app.get('/api/products', (req, res) => {
 });
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
+
+module.exports = app;

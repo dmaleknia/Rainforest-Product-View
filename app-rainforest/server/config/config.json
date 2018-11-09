@@ -1,0 +1,14 @@
+{
+  "development": {
+    "username": "fec9",
+    "password": "fec9",
+    "database": "pattribs",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "use_env_variable": "PATTRIBS_URL",
+    "dialect": "postgres"
+  }
+}
