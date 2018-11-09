@@ -6,6 +6,10 @@ const cors = require('cors');
 const morgan = require('morgan');
 const Sequelize = require('sequelize');
 
+const environment = process.env.NODE_ENV || 'development'; // look at!
+const configuration = require(__dirname + '/../../knexfile.js')[environment];
+const database = require('knex')(configuration);
+
 const app = express();
 const port = 710;
 
@@ -60,6 +64,73 @@ app.get('/products', (req, res) => {
     })
     .catch(err => {
       if (err) throw err;
+    });
+});
+
+app.get('/api/reviews', (req, res) => {
+  database('customer_review').select()
+    .then((reviews) => {
+      res.status(200).json(reviews);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
+    });
+});
+
+app.get('/api/reviews/:productid', (req, res) => {
+  let productid = req.params.productid;
+  database('customer_review').where({
+      product_id: productid
+    }).orderBy('helpful_count', 'desc').limit(10).select()
+    .then((reviews) => {
+      res.status(200).json(reviews);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
+    });
+});
+
+
+app.get('/api/images', (req, res) => {
+  database('customer_review_images').select()
+    .then((images) => {
+      res.status(200).json(images);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
+    });
+});
+
+app.get('/api/images/:reviewId', (req, res) => {
+  let reviewId = req.params.reviewId;
+  database('customer_review_images').where({
+      review_id: reviewId
+    }).select()
+    .then((images) => {
+      res.status(200).json(images);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
+    });
+});
+
+app.get('/api/products', (req, res) => {
+  database('product_info').select()
+    .then((products) => {
+      res.status(200).json(products);
+    })
+    .catch((error) => {
+      res.status(500).json({
+        error
+      });
     });
 });
 
