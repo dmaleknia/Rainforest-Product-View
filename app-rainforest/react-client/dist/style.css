@@ -176,9 +176,9 @@ table {
   display: inline;
 }
 
-#app {
+/* #app {
   margin: 10px;
-}
+} */
 
 .Category {
   margin: 10px;
@@ -232,18 +232,26 @@ body {
 }
 
 #product-view{
-  /* float: left; */
+  z-index: 10;
+  padding-top: 10px;
 }
 
 #app {
-  /* float: left; */
+  float: left;
+  z-index: -1;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  margin-top: 30px;
+  padding-top: 10px;
 }
 
 #top {
-  /* display: inline-block; */
-  /* display: inline-block;
-  vertical-align: middle; */
-  display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  padding-bottom: 30px;
+}
+
+#result {
+  position: absolute;
+  z-index: 99;
 }
