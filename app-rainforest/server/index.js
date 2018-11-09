@@ -71,7 +71,7 @@ app.get('/products', (req, res) => {
     });
 });
 
-app.get('/api/reviews', (req, res) => {
+app.get('/cr/reviews', (req, res) => {
   database('customer_review').select()
     .then((reviews) => {
       res.status(200).json(reviews);
@@ -115,7 +115,7 @@ app.get('/cr/images/:reviewId', (req, res) => {
   let reviewId = req.params.reviewId;
   database('customer_review_images').where({
       review_id: reviewId
-    }).select()
+    }).limit(4).select()
     .then((images) => {
       res.status(200).json(images);
     })
