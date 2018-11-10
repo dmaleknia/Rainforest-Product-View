@@ -145,7 +145,7 @@ table {
 }
 
 .right {
-  float:left;
+  float: left;
   margin-top: 19px;
   position: sticky;
   z-index: 99 !important;
@@ -232,10 +232,9 @@ body {
   margin-bottom: 128px;
 }
 
-#product-view{
+#product-view {
   z-index: 10;
   padding-top: 10px;
-  /* max-width: 49%; */
 }
 
 #app {
@@ -247,16 +246,16 @@ body {
   margin-top: 30px;
   padding-top: 10px;
   margin-left: 10px;
-  /* max-width: 49%; */
 }
 
 #top {
+  width: 100%;
   padding-bottom: 50px;
-  /* white-space: nowrap; */
-  /* max-width: 1083px; */
+  white-space: nowrap;
+  min-width: 1083px;
 }
 
 #result {
-  position: relative;
+  position: absolute;
   z-index: 99;
 }
