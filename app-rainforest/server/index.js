@@ -105,9 +105,9 @@ app.get('/cr/images', (req, res) => {
       res.status(200).json(images);
     })
     .catch((error) => {
-      // res.status(500).json({
-      //   error
-      // });
+      res.status(500).json({
+        error
+      });
     });
 });
 
@@ -120,9 +120,9 @@ app.get('/cr/images/:reviewId', (req, res) => {
       res.status(200).json(images);
     })
     .catch((error) => {
-      // res.status(500).json({
-      //   error
-      // });
+      res.status(500).json({
+        error
+      });
     });
 });
 
