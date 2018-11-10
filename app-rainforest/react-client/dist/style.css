@@ -235,22 +235,25 @@ body {
 #product-view{
   z-index: 10;
   padding-top: 10px;
+  max-width: 49%;
 }
 
 #app {
   float: left;
   z-index: -1;
   position: absolute;
-  right: 10px;
+  left: 600px;
   top: 10px;
   margin-top: 30px;
   padding-top: 10px;
   margin-left: 10px;
+  max-width: 49%;
 }
 
 #top {
-  width: 100%;
   padding-bottom: 50px;
+  white-space: nowrap;
+  max-width: 1083px;
 }
 
 #result {
