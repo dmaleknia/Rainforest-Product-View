@@ -257,8 +257,11 @@ body {
 }
 
 #result {
-  position: relative;
-  z-index: 99;
+  float: left;
+  z-index: 10;
+  position: absolute;
   left: 60px;
   top: 0px;
+  padding-left: 10px;
+  height: 800px;
 }
