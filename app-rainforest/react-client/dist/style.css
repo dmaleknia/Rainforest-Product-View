@@ -106,11 +106,6 @@ body {
   line-height: 1;
 }
 
-ol,
-ul {
-  list-style: none;
-}
-
 blockquote,
 q {
   quotes: none;
@@ -148,6 +143,10 @@ table {
   float: left;
   margin-top: 19px;
   position: sticky;
+}
+
+.sizeBox:hover {
+  background: grey;
 }
 
 .ProductView {
@@ -238,7 +237,7 @@ body {
 
 #app {
   float: left;
-  z-index: 9;
+  z-index: -1;
   position: absolute;
   left: 600px;
   top: 10px;
