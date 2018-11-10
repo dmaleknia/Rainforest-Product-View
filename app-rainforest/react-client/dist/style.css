@@ -148,7 +148,6 @@ table {
   float: left;
   margin-top: 19px;
   position: sticky;
-  z-index: 99 !important;
 }
 
 .ProductView {
@@ -239,7 +238,7 @@ body {
 
 #app {
   float: left;
-  z-index: -1;
+  z-index: 9;
   position: absolute;
   left: 600px;
   top: 10px;
